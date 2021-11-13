@@ -1,13 +1,13 @@
 package com.jocuriledelfinului.delfinul.generators;
 
 import com.jocuriledelfinului.delfinul.DTOs.Location;
-import com.jocuriledelfinului.delfinul.models.Terrain;
+import com.jocuriledelfinului.delfinul.enums.Terrain;
+import com.jocuriledelfinului.delfinul.strategies.Strategy;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.util.Pair;
 
-import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,13 +21,9 @@ public class ImportantLocations {
     final List<Pair<Location, Terrain>> locationList;
 
     @Builder
-    public static ImportantLocations generateLocations(int upperBound, EnumSet<Terrain> terrain) {
-        if (terrain == null) {
-            terrain = Terrain.getDefaultSet();
-        }
-
+    public static ImportantLocations generateLocations(int upperBound, Strategy strategy) {
         Map<Location, Terrain> locationMap = new HashMap<>();
-        terrain.forEach(
+        strategy.IMPORTANT_TILE_SET.forEach(
                 (t) -> {
                     Location location;
                     do {

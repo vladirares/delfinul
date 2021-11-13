@@ -1,10 +1,9 @@
 package com.jocuriledelfinului.delfinul.serializers;
 
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import com.jocuriledelfinului.delfinul.models.Terrain;
+import com.jocuriledelfinului.delfinul.enums.Terrain;
 
 import java.io.IOException;
 

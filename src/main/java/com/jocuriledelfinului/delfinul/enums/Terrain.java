@@ -1,4 +1,4 @@
-package com.jocuriledelfinului.delfinul.models;
+package com.jocuriledelfinului.delfinul.enums;
 
 
 import java.util.EnumSet;
