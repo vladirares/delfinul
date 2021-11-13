@@ -1,5 +1,6 @@
 package com.jocuriledelfinului.delfinul.controllers;
 
+import com.jocuriledelfinului.delfinul.models.Terrain;
 import com.jocuriledelfinului.delfinul.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping("generate/board")
-    public Mono<List<List<Character>>> generateBoard(@PathParam("size") int size){
+    public Mono<List<List<Terrain>>> generateBoard(@PathParam("size") Integer size){
         Logger.getLogger(UserController.class.getName()).info("generated board ");
         return userService.generateBoard(size);
     }
