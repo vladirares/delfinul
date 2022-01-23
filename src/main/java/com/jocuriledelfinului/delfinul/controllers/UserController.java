@@ -34,7 +34,7 @@ public class UserController {
     public Mono<List<List<Terrain>>> generateBoardCeva(@PathParam("size") Integer size, @PathParam("strategy") String strategy) {
         Logger.getLogger(UserController.class.getName()).info("generated board ");
         return Optional.ofNullable(strategy)
-                .map(strat -> userService.generateBoard(15,strat))
+                .map(strat -> userService.generateBoard(45,strat))
                 .orElse(userService.generateBoard(size,""));
     }
 
