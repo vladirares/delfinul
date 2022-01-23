@@ -29,4 +29,14 @@ public class UserController {
                 .map(strat -> userService.generateBoard(size,strat))
                 .orElse(userService.generateBoard(size,""));
     }
+
+    @GetMapping("generate/ceva")
+    public Mono<List<List<Terrain>>> generateBoardCeva(@PathParam("size") Integer size, @PathParam("strategy") String strategy) {
+        Logger.getLogger(UserController.class.getName()).info("generated board ");
+        return Optional.ofNullable(strategy)
+                .map(strat -> userService.generateBoard(15,strat))
+                .orElse(userService.generateBoard(size,""));
+    }
+
+
 }
